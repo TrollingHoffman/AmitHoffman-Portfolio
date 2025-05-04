@@ -1,35 +1,235 @@
-.TopNav 
-{
-overflow: hidden;
-background-color: #333;
-position: relative;
+.about-hero {
+    padding: 100px 0 60px;
+    background-color: var(--background-color);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
 }
 
-.TopNav #myLinks
-{
-    display: none;
-}
-
-.TopNav a
-{
-color: white;
-padding: 14px 16px;
-text-decoration: none;
-font-size: 17px;
-display: block;
-}
-
-.TopNav a.icon
-{
-    background:black;
-    display: block;
+.about-hero::after {
+    content: '';
     position: absolute;
-    right: 0;
-    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
 }
 
-.Active
-{
-background-color: #04AA6D;
-color:white;
+.page-title {
+    font-size: 48px;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.intro-text {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    line-height: 2;
+    font-size: 20px;
+    color: var(--text-color);
+    padding: 0 20px;
+}
+
+.section-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.about-cards-section {
+    padding: 60px 0;
+    margin: 0;
+    width: 100%;
+}
+
+.alt-bg {
+    background-color: var(--card-background);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.about-card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.card-content h2 {
+    font-size: 26px;
+    margin-bottom: 18px;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.card-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+}
+
+.card-content p {
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.activities-section {
+    padding: 60px 0;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.activity-card {
+    background-color: var(--background-color);
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.activity-icon {
+    font-size: 36px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activity-card h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.activity-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+body.dark-mode .about-card {
+    background-color: var(--card-background);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .activity-card {
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .card-content h2,
+body.dark-mode .card-content p,
+body.dark-mode .activity-card h3,
+body.dark-mode .activity-card p {
+    color: var(--text-color);
+}
+
+
+@media (min-width: 1200px) {
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .activities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .page-title {
+        font-size: 36px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .card-image {
+        height: 180px;
+    }
 }
