@@ -173,10 +173,13 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
   }
   
   .project-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   }
   
   .project-card img {
@@ -184,6 +187,7 @@
     height: 300px;
     object-fit: cover;
     border-bottom: 1px solid var(--border-color);
+    margin-bottom: 15px;
   }
   
   .project-content {
@@ -210,6 +214,7 @@
   .project-buttons .btn {
     flex: 1;
     text-align: center;
+    padding: 10px 20px;
   }
 
   .contact-section,
@@ -222,6 +227,25 @@
   border-bottom: 1px solid var(--border-color);
 }
   
+.section-title {
+    margin-bottom: 40px;
+    padding-top: 15px;
+}
+
+.project-card h4 {
+    font-size: 24px;
+    margin: 20px 0 15px;
+    padding: 0 20px;
+    color: var(--text-color);
+}
+
+.project-card p {
+    padding: 0 20px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+  }
+
+
 
 @media (max-width: 767px) {
     .hero-content {
@@ -235,6 +259,9 @@
 
     .project-buttons {
         flex-direction: column;
+        padding: 0 20px;
+        margin-top: 10px;
+        margin-bottom: 15px;
     }
     
     .content {
@@ -257,6 +284,19 @@
     
     .call-to-action {
         flex-direction: column;
+    }
+
+    .project-card h4 {
+        font-size: 22px;
+        margin: 20px 0 12px;
+    }
+
+    .project-card img {
+        height: 220px;
+    }
+      
+      .project-card {
+        margin-bottom: 40px;
     }
 }
 
