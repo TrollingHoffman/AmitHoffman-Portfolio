@@ -1,15 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
-    const hamburgerIcon = document.querySelector('.fa-bars-staggered');
-    const closeIcon = document.querySelector('.fa-xmark');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
     
     if (hamburgerMenu) {
         hamburgerMenu.addEventListener('click', function() {
-            let isVisible = navLinks.getAttribute('data-visible');
+            const isVisible = navLinks.getAttribute('data-visible') === 'true';
             
-            if (isVisible === 'false') {
+            if (!isVisible) {
                 navLinks.setAttribute('data-visible', 'true');
                 hamburgerIcon.setAttribute('data-visible', 'false');
                 closeIcon.setAttribute('data-visible', 'true');
@@ -21,39 +20,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navItems = document.querySelectorAll('.nav-links a');
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
     
-    navItems.forEach(item => {
-        if (item.getAttribute('href') === currentPage) {
-            item.classList.add('active');
-        } else {
-            item.classList.remove('active');
-        }
-    });
-    
-    if (!document.querySelector('.dark-mode-toggle')) {
-        const darkModeToggle = document.createElement('button');
-        darkModeToggle.className = 'dark-mode-toggle';
-        darkModeToggle.innerHTML = '🌙'; 
-        document.body.appendChild(darkModeToggle);
+    if (darkModeToggle) {
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
         
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
+        if (isDarkMode) {
             document.body.classList.add('dark-mode');
-            darkModeToggle.innerHTML = '☀️'; 
+            updateDarkModeIcon(true);
         }
         
         darkModeToggle.addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
+            const darkModeActive = document.body.classList.toggle('dark-mode');
             
-            if (document.body.classList.contains('dark-mode')) {
-                darkModeToggle.innerHTML = '☀️'; 
-                localStorage.setItem('theme', 'dark');
-            } else {
-                darkModeToggle.innerHTML = '🌙'; 
-                localStorage.setItem('theme', 'light');
-            }
+            updateDarkModeIcon(darkModeActive);
+            localStorage.setItem('darkMode', darkModeActive);
         });
     }
+    
+    function updateDarkModeIcon(isDarkMode) {
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        
+        if (darkModeToggle) {
+            if (isDarkMode) {
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
+    }
+    
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 767) {
+            const isNavbarVisible = navLinks && navLinks.getAttribute('data-visible') === 'true';
+            const isClickInsideNavbar = navLinks && navLinks.contains(event.target);
+            const isClickOnHamburger = hamburgerMenu && hamburgerMenu.contains(event.target);
+            
+            if (isNavbarVisible && !isClickInsideNavbar && !isClickOnHamburger) {
+                navLinks.setAttribute('data-visible', 'false');
+                if (hamburgerIcon) hamburgerIcon.setAttribute('data-visible', 'true');
+                if (closeIcon) closeIcon.setAttribute('data-visible', 'false');
+            }
+        }
+    });
 });

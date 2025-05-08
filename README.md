@@ -51,20 +51,20 @@
 המשתמש ימלא טופס קצר ויציג הצעת מחיר משוערת.  
 **הטופס כולל:**
 
-- סוג אתר לבחירה: Business Site / Online Store / Blog
-- מספר עמודים (בין 1 ל-10)
-- האם יש צורך בעיצוב מותאם אישית: Yes / No
+- סוג שירות מוצע: Junior Employee Recrutiment / CV Enhancement & Optimization / LinkedIn Profile Building & Branding
+- מספר ראיונות בין (1-5)
+- האם תרצה שאלווה את כל תהליך הגיוס? : Yes / No
 - **כפתור "Reset".** מאפס את כל השדות.
 - **כפתור "Calculate Price".**  
   לאחר לחיצה על הכפתור יוצג המחיר המחושב לפי הכללים:
 
-| Parameter              | Price                      |
-| :--------------------- | -------------------------- |
-| Business Site          | 1000 ₪                     |
-| Online Store           | 2000 ₪                     |
-| Blog                   | 1500 ₪                     |
-| Extra pages (above 1\) | \+200 ₪ לכל עמוד נוסף      |
-| Custom Design          | \+1000 ₪ תוספת למחיר הסופי |
+| Parameter                                  | Price                      |
+| :---------------------                     | -------------------------- |
+| Junior Employee Recruitment                | 1500 ₪                     |
+| CV Enhancement & Optimization              | 500 ₪                      |
+| LinkedIn Profile Building & Branding       | 750 ₪                      |
+| Pre-Interview Meeting                      | \+200 ₪ Per Interview      |
+| Full Career Consultation                   | \+800 ₪                    |
 
 ##
 

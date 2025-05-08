@@ -1,4 +1,35 @@
-/* variables.css */
-:root {
-  --primary-color: #ffffff;
+
+:root
+{
+    --primary-color: #213555;
+    --secondary-color: #3E5879;
+    --accent-color: #D8C4B6;
+    --light-color: #f5efe7;
+    --text-color:#213555;
+    --background-color: #f5efe7;
+    --hero-background: #f5efe7;
+    --header-background: #213555;
+    --footer-background: #213555;
+    --border-color: #D8C4B6;
+    --button-background: #3E5879;
+    --button-text: #f5efe7;
+    --card-background:#ffffff;
+    --icon-background:#e6e9f0;
+}
+
+body.dark-mode {
+    --primary-color: #1a1a1a;
+    --secondary-color: #333333;
+    --accent-color: #00b8a9;
+    --light-color: #f8f9fa;
+    --text-color:#f0f0f0;
+    --background-color: #121212;
+    --hero-background: 1a1a1a;
+    --header-background: #1a1a1a;
+    --footer-background: #1a1a1a;
+    --border-color: #00b8a9;
+    --button-background: #00b8a9;
+    --button-text: #1a1a1a;
+    --card-background:#ffffff;
+    --icon-background:#e6e9f0;
 }

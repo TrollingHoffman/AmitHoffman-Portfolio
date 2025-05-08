@@ -226,9 +226,11 @@
 @media (max-width: 767px) {
     .hero-content {
         display: flex;
-        flex-direction: row-reverse;
-        text-align: left;
-        justify-content: space-between;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
     }
 
     .project-buttons {
@@ -236,19 +238,21 @@
     }
     
     .content {
-        width: 45%;
+        width: 100%;
         text-align: center;
+        order: 2;
     }
     
     .person-img {
-        width: 45%;
+        width: 100%;
         margin-bottom: 20px;
-        text-align: right;
+        text-align: center;
+        order: 1;
     }
     
     .person-img img {
         max-width: 300px;
-        width: 80%;
+        width: auto;
     }
     
     .call-to-action {
