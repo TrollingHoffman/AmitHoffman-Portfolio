@@ -4,6 +4,8 @@
     border: 1px solid var(--border-color);
     border-radius: 12px;
     margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     display: flex;
     align-items: center;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
@@ -57,20 +59,6 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.call-to-action {
-    display: flex;
-    justify-content: space-between;
-    margin: 40px auto;
-    gap: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 20px;
-    background-color: var(--card-background);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    margin-bottom: 2px;
-    padding-bottom: 10px;
-    
-}
 
 .contact-info, .featured-project {
     flex: 1;
@@ -155,11 +143,22 @@
     margin-top: 5px;
 }
 
-.projects-section {
-    padding: 60px 0;
-    margin: 30px auto;
-  }
-  
+.call-to-action, .projects-section {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 40px;
+  background-color: var(--card-background);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 1400px;
+  margin: 20px auto;
+}
+
+.call-to-action{
+  margin: 20px auto;
+    padding-bottom: 20px;
+}
+
   .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -216,16 +215,6 @@
     text-align: center;
     padding: 10px 20px;
   }
-
-  .contact-section,
-.projects-section {
-  padding: 60px 0;
-  background-color: var(--card-background);
-  margin: 30px 0;
-  width: 100%;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-}
   
 .section-title {
     margin-bottom: 40px;
@@ -259,7 +248,7 @@
 
     .project-buttons {
         flex-direction: column;
-        padding: 0 20px;
+        padding: 8px 16px;
         margin-top: 10px;
         margin-bottom: 15px;
     }
@@ -284,6 +273,7 @@
     
     .call-to-action {
         flex-direction: column;
+        margin-bottom: 20px;
     }
 
     .project-card h4 {

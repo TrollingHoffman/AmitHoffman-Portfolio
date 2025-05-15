@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const basicServiceSelect = document.getElementById('basic-service');
     const additionalInterviewCheckbox = document.getElementById('additional-interview');
-    const careerConsultationCheckbox = document.getElementById('career-consultation');
+   const careerConsultationYes = document.getElementById('career-consultation-yes');
+const careerConsultationNo = document.getElementById('career-consultation-no');
     const interviewCount = document.getElementById('interview-count');
     const decreaseInterview = document.getElementById('decrease-interview');
     const increaseInterview = document.getElementById('increase-interview');
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
 
-      const selectedOption = basicServiceSelect.options[basicServiceSelect.selectedIndex];
+      const selectedOption = document.querySelector('#basic-service option:checked');
       const baseServiceName = selectedOption.text.split(' (')[0];
       const baseServicePrice = parseInt(selectedOption.dataset.price);
       
@@ -81,12 +82,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
       
-      if (careerConsultationCheckbox.checked) {
-        const consultationPrice = 800;
-        total += consultationPrice;
-        serviceItems.push({
-          name: 'Career Consultation & Guidance',
-          price: consultationPrice
+      const careerConsultationYes = document.getElementById('career-consultation-yes');
+      if (careerConsultationYes.checked) {
+      const consultationPrice = 800;
+      total += consultationPrice;
+      serviceItems.push({
+      name: 'Full Career Consultation',
+      price: consultationPrice
         });
       }
       
@@ -112,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function resetForm() {
       basicServiceSelect.value = '';
       additionalInterviewCheckbox.checked = false;
-      careerConsultationCheckbox.checked = false;
+      careerConsultationNo.checked = true;
       interviewCount.value = 1;
       interviewCount.disabled = true;
       decreaseInterview.disabled = true;

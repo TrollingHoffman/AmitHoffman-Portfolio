@@ -100,11 +100,17 @@
               </div>
             </div>
             
-            <div class="checkbox-option">
-              <input type="checkbox" id="career-consultation" data-price="800">
-              <label for="career-consultation">Career Consultation & Guidance (₪800)</label>
-            </div>
-          </div>
+           <div class="radio-options">
+  <h3>Full Career Consultation (₪800) :</h3>
+  <div class="radio-option">
+    <input type="radio" id="career-consultation-yes" name="career-consultation" value="yes" data-price="800">
+    <label for="career-consultation-yes">Yess</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="career-consultation-no" name="career-consultation" value="no" data-price="0" checked>
+    <label for="career-consultation-no">No</label>
+  </div>
+</div>
           
           <div class="calculator-buttons">
             <button id="calculate-btn" class="btn btn-primary">Calculate Price</button>

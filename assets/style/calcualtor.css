@@ -254,6 +254,34 @@
     display: flex;
     justify-content: space-between;
   }
+
+.radio-options {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.radio-options h3 {
+  margin-bottom: 12px;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.radio-option input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.radio-option label {
+  cursor: pointer;
+  color: var(--text-color);
+}
   
   @media (max-width: 1200px) {
     .service-items-row {
