@@ -1,3 +1,5 @@
+@import url(/assets/style/variables.css);
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
