@@ -63,7 +63,7 @@
 | Junior Employee Recruitment                | 1500 ₪                     |
 | CV Enhancement & Optimization              | 500 ₪                      |
 | LinkedIn Profile Building & Branding       | 750 ₪                      |
-| Pre-Interview Meeting                      | \+200 ₪ Per Interview      |
+| Pre-Interview Meeting (1-5)                | \+200 ₪ Per Interview      |
 | Full Career Consultation                   | \+800 ₪                    |
 
 ##
